@@ -59,4 +59,44 @@ export const products = [
     description:
       "A signature floral fragrance with notes of rose and peony, designed for an elegant, long-lasting scent.",
   },
+  {
+    id: 'p7',
+    name: 'Nike Free Flyknit Sneakers',
+    price: 47.99,
+    rating: 4.5,
+    color: 'Red/White',
+    image: 'https://picsum.photos/seed/nike-free-flyknit/500',
+    description:
+      'A lightweight running shoe with a flexible knit upper and cushioned sole, built for everyday training and casual wear.',
+  },
+  {
+    id: 'p8',
+    name: "Women's Double-Breasted Blazer",
+    price: 54.99,
+    rating: 4.4,
+    color: 'Red',
+    image: 'https://picsum.photos/seed/womens-blazer/500',
+    description:
+      'A tailored double-breasted blazer with a structured fit, perfect for layering over both casual and formal outfits.',
+  },
+  {
+    id: 'p9',
+    name: 'Curology Skincare Set 100g',
+    price: 2.99,
+    rating: 4.1,
+    color: 'Standard',
+    image: 'https://picsum.photos/seed/curology-set/500',
+    description:
+      'A gentle daily skincare set suited for all skin types, formulated to leave skin feeling fresh and clean.',
+  },
+  {
+    id: 'p10',
+    name: 'Classic Wireless Earbuds',
+    price: 15.99,
+    rating: 4.3,
+    color: 'White',
+    image: 'https://picsum.photos/seed/classic-earbuds/500',
+    description:
+      'Compact true wireless earbuds with a snug fit and clear sound, paired with a pocket-sized charging case.',
+  },
 ];
