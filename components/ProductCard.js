@@ -8,6 +8,8 @@ export default function ProductCard({
   rating,
   backgroundColor,
   onPress,
+  resizeMode = "cover",
+  imageStyle,
 }) {
   return (
     <Pressable
@@ -20,14 +22,19 @@ export default function ProductCard({
       ]}
       onPress={onPress}
     >
-      <Image source={{ uri: image }} style={styles.image} resizeMode="cover" />
-
+      <View style={[styles.imageWrapper, imageStyle]}>
+        <Image
+          source={typeof image === "string" ? { uri: image } : image}
+          style={styles.image}
+          resizeMode={resizeMode}
+        />
+      </View>
       <Text style={styles.name} numberOfLines={2}>
         {name}
       </Text>
 
       <View style={styles.ratingRow}>
-        <Ionicons name="star" size={13} color="#F5A623" />
+        <Ionicons name="star" size={13} color="#f7b64dff" />
         <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
       </View>
 
@@ -48,15 +55,20 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 16,
   },
-  image: {
+  imageWrapper: {
     width: "100%",
-    height: 100,
+    aspectRatio: 0.85,
     borderRadius: 10,
     marginBottom: 10,
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: "100%",
   },
   name: {
     fontSize: 13,
-    fontWeight: "600",
+    fontFamily: "InriaSans_700Bold",
     color: "#1F1F1F",
     minHeight: 34,
   },

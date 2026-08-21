@@ -1,8 +1,8 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import ProductCard from '../components/ProductCard';
-import { products } from '../data/products';
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import ProductCard from "../components/ProductCard";
+import { products } from "../data/products";
 
-const cardColors = ['#DDF5E3', '#E7E2FB', '#FDE2E6', '#FFF3D6'];
+const cardColors = ["#DDF5E3", "#E7E2FB", "#FDE2E6", "#FFF3D6"];
 
 export default function HomeScreen({ navigation }) {
   const renderItem = ({ item, index }) => (
@@ -12,7 +12,9 @@ export default function HomeScreen({ navigation }) {
       price={item.price}
       rating={item.rating}
       backgroundColor={cardColors[index % cardColors.length]}
-      onPress={() => navigation.navigate('ProductDetails', { product: item })}
+      resizeMode={item.resizeMode}
+      imageStyle={item.imageStyle}
+      onPress={() => navigation.navigate("ProductDetails", { product: item })}
     />
   );
 
@@ -30,16 +32,18 @@ export default function HomeScreen({ navigation }) {
         numColumns={2}
         columnWrapperStyle={styles.row}
         contentContainerStyle={styles.list}
-        ListHeaderComponent={<Text style={styles.sectionTitle}>Popular Products</Text>}
+        ListHeaderComponent={
+          <Text style={styles.sectionTitle}>Popular Products</Text>
+        }
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
+  container: { flex: 1, backgroundColor: "#fff" },
   header: {
-    backgroundColor: '#FF6B4A',
+    backgroundColor: "#FF6B4A",
     paddingTop: 60,
     paddingBottom: 20,
     paddingHorizontal: 20,
@@ -48,22 +52,22 @@ const styles = StyleSheet.create({
   },
   brand: {
     fontSize: 22,
-    fontFamily: 'InriaSans_700Bold',
-    color: '#fff',
+    fontFamily: "InriaSans_700Bold",
+    color: "#fff",
   },
   subtitle: {
     fontSize: 13,
-    fontFamily: 'InriaSans_400Regular',
-    color: '#FFE8E1',
+    fontFamily: "InriaSans_400Regular",
+    color: "#FFE8E1",
     marginTop: 2,
   },
   sectionTitle: {
     fontSize: 17,
-    fontFamily: 'InriaSans_700Bold',
-    color: '#1F1F1F',
+    fontFamily: "InriaSans_700Bold",
+    color: "#1F1F1F",
     marginTop: 18,
     marginBottom: 12,
   },
   list: { paddingHorizontal: 20, paddingBottom: 20 },
-  row: { justifyContent: 'space-between' },
+  row: { justifyContent: "space-between" },
 });

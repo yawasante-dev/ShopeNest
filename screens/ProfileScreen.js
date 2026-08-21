@@ -18,8 +18,8 @@ export default function ProfileScreen() {
           style={styles.avatar}
         />
       </View>
-      <Text style={styles.name}>Jane Doe</Text>
-      <Text style={styles.email}>jane@shopnest.com</Text>
+      <Text style={styles.name}>Yaw Asante</Text>
+      <Text style={styles.email}>yawasantedev@gmail.com</Text>
 
       <View style={styles.menu}>
         {menuItems.map((item) => (
