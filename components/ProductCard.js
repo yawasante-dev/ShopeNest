@@ -8,7 +8,6 @@ export default function ProductCard({
   rating,
   backgroundColor,
   onPress,
-  resizeMode = "cover",
   imageStyle,
 }) {
   return (
@@ -26,9 +25,10 @@ export default function ProductCard({
         <Image
           source={typeof image === "string" ? { uri: image } : image}
           style={styles.image}
-          resizeMode={resizeMode}
+          resizeMode="cover"
         />
       </View>
+
       <Text style={styles.name} numberOfLines={2}>
         {name}
       </Text>

@@ -7,7 +7,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { ActivityIndicator, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { CartProvider } from "./context/CartContext";
 import MainTabs from "./navigation/MainTabs";
 
 export default function App() {
@@ -27,11 +26,9 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <CartProvider>
-        <NavigationContainer>
-          <MainTabs />
-        </NavigationContainer>
-      </CartProvider>
+      <NavigationContainer>
+        <MainTabs />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }

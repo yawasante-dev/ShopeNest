@@ -12,7 +12,6 @@ export default function HomeScreen({ navigation }) {
       price={item.price}
       rating={item.rating}
       backgroundColor={cardColors[index % cardColors.length]}
-      resizeMode={item.resizeMode}
       imageStyle={item.imageStyle}
       onPress={() => navigation.navigate("ProductDetails", { product: item })}
     />

@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import {
   Alert,
   Image,
@@ -9,11 +9,9 @@ import {
   Text,
   View,
 } from "react-native";
-import { CartContext } from "../context/CartContext";
 
 export default function ProductDetailsScreen({ route, navigation }) {
   const { product } = route.params;
-  const { addToCart } = useContext(CartContext);
 
   const [quantity, setQuantity] = useState(1);
 
@@ -21,7 +19,6 @@ export default function ProductDetailsScreen({ route, navigation }) {
   const decrease = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
     Alert.alert("Added to cart", `${quantity} x ${product.name} added.`);
   };
 
