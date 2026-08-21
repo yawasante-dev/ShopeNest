@@ -20,7 +20,12 @@ export default function CartScreen() {
 
   const renderItem = ({ item }) => (
     <View style={styles.row}>
-      <Image source={{ uri: item.image }} style={styles.image} />
+      <Image
+        source={
+          typeof item.image === "string" ? { uri: item.image } : item.image
+        }
+        style={styles.image}
+      />
       <View style={styles.info}>
         <Text style={styles.name} numberOfLines={1}>
           {item.name}
